@@ -1,16 +1,8 @@
-// khai bao reducres va combi
-import * as types from '../constants/ActionTypes';
+import { combineReducers } from 'redux';
+import products from './products';
 
-var oldState = {
-    status: false
-}
+const appReducers = combineReducers({
+    products
+});
 
-var reducer1 = (state=oldState, action) => {
-    switch (action.type) {
-        case types.TOGGLE_STATUS:
-            return {...state, status:!state.status};
-    }
-    return state;
-}
-
-export default reducer1;
+export default appReducers;
